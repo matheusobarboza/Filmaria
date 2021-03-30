@@ -3,6 +3,8 @@ import './filmeInfo.css';
 import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
+import { toast } from 'react-toastify';
+
 import { useLoading, BallTriangle } from '@agney/react-loading';
 
 export default function Filme() {
@@ -41,14 +43,14 @@ export default function Filme() {
     const hasMovie = savedMovies.some((savedMovie) => savedMovie.id === filme.id);
 
     if(hasMovie) {
-      alert('Você já possui esse filme salvo.')
+      toast.info('Você já possui esse filme salvo.')
       return;
       //Para a execução do código aqui...
     }
 
     savedMovies.push(filme);
     localStorage.setItem('filmes', JSON.stringify(savedMovies));
-    alert('Filme salvo com sucesso!');
+    toast.success('Filme salvo com sucesso!');
   }
 
   if (isLoading) {

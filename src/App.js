@@ -1,11 +1,13 @@
+//https://sujeitoprogramador.com/r-api/?api=filmes/
 import React from 'react';
 
-//https://sujeitoprogramador.com/r-api/?api=filmes/
+import Routes from './routes'
+import './styles.css';
 
 function App() {
   return (
-    <div>
-      <h1>Filmaria</h1>
+    <div className="app">
+      <Routes />
     </div>
   );
 }
